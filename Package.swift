@@ -13,12 +13,12 @@ let package = Package(
         .library(
             name: "KinKit",
             targets: ["Shared","KinKit"]),
-        .library(
-            name: "KinKit_OtherPlatform",
-            targets: ["Shared", "KinKit_OtherPlatform"]),
+//        .library(
+//            name: "KinKit_OtherPlatform",
+//            targets: ["Shared", "KinKit_OtherPlatform"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/apple/swift-foundation", branch: "main")
+//        .package(url: "https://github.com/apple/swift-foundation", branch: "main")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -29,12 +29,12 @@ let package = Package(
         .target(
             name: "KinKit"
         ),
-        .target(
-            name: "KinKit_OtherPlatform",
-            dependencies: [
-                .product(name: "FoundationEssentials", package: "swift-foundation")
-            ]
-        ),
+//        .target(
+//            name: "KinKit_OtherPlatform",
+//            dependencies: [
+//                .product(name: "FoundationEssentials", package: "swift-foundation")
+//            ]
+//        ),
 
     ]
 )
