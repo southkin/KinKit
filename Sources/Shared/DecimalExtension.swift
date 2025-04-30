@@ -6,9 +6,9 @@
 //
 
 #if canImport(Foundation)
-import Foundation
+@_exported import Foundation
 #elseif canImport(FoundationEssentials) && !os(macOS) && !os(iOS) && !os(tvOS) && !os(watchOS)
-import FoundationEssentials
+@_exported import FoundationEssentials
 #endif
 
 public extension Decimal {
