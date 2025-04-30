@@ -5,6 +5,12 @@
 //  Created by kin on 4/30/25.
 //
 
+#if canImport(Foundation)
+import Foundation
+#elseif canImport(FoundationEssentials) && !os(macOS) && !os(iOS) && !os(tvOS) && !os(watchOS)
+import FoundationEssentials
+#endif
+
 public extension Decimal {
     func rounded(scale: Int = 0, mode: NSDecimalNumber.RoundingMode = .plain) -> Decimal {
         let handler = NSDecimalNumberHandler(
