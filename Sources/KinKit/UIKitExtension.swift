@@ -6,7 +6,7 @@
 //
 #if canImport(UIKit)
 import UIKit
-extension UIView {
+public extension UIView {
     static func fileName() -> String {
         return String(describing: self)
     }
