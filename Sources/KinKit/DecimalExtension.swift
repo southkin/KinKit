@@ -4,13 +4,8 @@
 //
 //  Created by kin on 4/30/25.
 //
-#if canImport(Foundation)
-import Foundation
-#elseif canImport(FoundationEssentials)
-import FoundationEssentials
-#endif
 
-extension Decimal {
+public extension Decimal {
     func rounded(scale: Int = 0, mode: NSDecimalNumber.RoundingMode = .plain) -> Decimal {
         let handler = NSDecimalNumberHandler(
             roundingMode: mode,

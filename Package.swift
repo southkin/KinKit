@@ -5,11 +5,17 @@ import PackageDescription
 
 let package = Package(
     name: "KinKit",
+    platforms: [
+        .macOS(.v10_15)
+    ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "KinKit",
             targets: ["KinKit"]),
+        .library(
+            name: "KinKit_OtherPlatform",
+            targets: ["KinKit_OtherPlatform"]),
     ],
     dependencies: [
         .package(url: "https://github.com/apple/swift-foundation", branch: "main")
@@ -18,7 +24,10 @@ let package = Package(
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "KinKit",
+            name: "KinKit"
+        ),
+        .target(
+            name: "KinKit_OtherPlatform",
             dependencies: [
                 .product(name: "FoundationEssentials", package: "swift-foundation")
             ]

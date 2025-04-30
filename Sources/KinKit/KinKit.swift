@@ -2,7 +2,7 @@
 // https://docs.swift.org/swift-book
 
 #if canImport(Foundation)
-import Foundation
-#elseif canImport(FoundationEssentials)
-import FoundationEssentials
+@_exported import Foundation
+#elseif canImport(FoundationEssentials) && !os(macOS) && !os(iOS) && !os(tvOS) && !os(watchOS)
+@_exported import FoundationEssentials
 #endif
