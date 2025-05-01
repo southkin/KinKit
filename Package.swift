@@ -11,16 +11,26 @@ let package = Package(
     ],
     products: [
         .library(
+            name: "KinKitCore",
+            targets: ["KinKitCore"]),
+        .library(
             name: "KinKit",
-            targets: ["Shared","KinKit"]),
+            targets: ["KinKit"]),
+//        .library(
+//            name: "KinKit_OtherPlatform",
+//            targets: ["KinKit_OtherPlatform"]),
     ],
     targets: [
         .target(
-            name: "Shared"
+            name: "KinKitCore"
         ),
         .target(
             name: "KinKit",
-            dependencies: ["Shared"]
-        )
+            dependencies: ["KinKitCore"]
+        ),
+//        .target(
+//            name: "KinKit_OtherPlatform",
+//            dependencies: ["Shared"]
+//        )
     ]
 )
