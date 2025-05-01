@@ -10,21 +10,7 @@ public extension String {
         return data(using: .utf8)
     }
 }
-public extension Int {
-    var string:String {
-        "\(self)"
-    }
-}
-public extension Float {
-    var string:String {
-        "\(self)"
-    }
-}
-public extension Double {
-    var string:String {
-        "\(self)"
-    }
-}
+
 public extension String {
     var string:String {
         self
