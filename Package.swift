@@ -19,7 +19,8 @@ let package = Package(
             name: "Shared"
         ),
         .target(
-            name: "KinKit"
+            name: "KinKit",
+            dependencies: ["Shared"]
         )
     ]
 )
