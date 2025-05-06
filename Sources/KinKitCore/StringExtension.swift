@@ -132,6 +132,9 @@ public extension String {
     var localized:String {
         return NSLocalizedString(self, comment: "")
     }
+    var boolValue:Bool {
+        ["true", "t", "yes", "y", "1"].contains(self.lowercased())
+    }
     func localized(comment:String = "") -> String {
         return NSLocalizedString(self, comment: comment)
     }
