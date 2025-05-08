@@ -23,7 +23,7 @@ public enum ProcessState<T> {
         }
     }
 }
-final class ProcessPublisher<Output> {
+public final class ProcessPublisher<Output> {
     private let subject: CurrentValueSubject<ProcessState<Output>, Never>
     
     init(initialValue: ProcessState<Output> = .loading) {
