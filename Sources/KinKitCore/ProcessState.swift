@@ -33,7 +33,9 @@ public final class ProcessPublisher<Output> {
     public var publisher: AnyPublisher<ProcessState<Output>, Never> {
         subject.eraseToAnyPublisher()
     }
-    
+    public func send(_ value: ProcessState<Output>) {
+        subject.send(value)
+    }
     public func sendLoading() {
         subject.send(.loading)
     }
