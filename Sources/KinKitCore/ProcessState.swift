@@ -22,6 +22,14 @@ public enum ProcessState<T> {
             return isFailure(error)
         }
     }
+    var value: T? {
+        switch self {
+        case .success(let value):
+            return value
+        default:
+            return nil
+        }
+    }
 }
 public final class ProcessPublisher<Output> {
     private let subject: CurrentValueSubject<ProcessState<Output>, Never>
