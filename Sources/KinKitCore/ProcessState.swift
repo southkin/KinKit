@@ -22,7 +22,7 @@ public enum ProcessState<T> {
             return isFailure(error)
         }
     }
-    var value: T? {
+    public var value: T? {
         switch self {
         case .success(let value):
             return value
