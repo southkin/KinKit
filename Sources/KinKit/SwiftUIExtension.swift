@@ -15,4 +15,7 @@ public extension View {
             self
         }
     }
+    var toAnyView: AnyView {
+        AnyView(self)
+    }
 }
