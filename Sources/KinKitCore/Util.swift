@@ -14,7 +14,7 @@ import WatchKit
 #endif
 
 public func currentDeviceName() -> String {
-    #if os(iOS || os(padOS))
+    #if os(iOS) || os(padOS)
     return UIDevice.current.name
     #elseif os(macOS)
     return Host.current().localizedName ?? "Unknown Mac"
