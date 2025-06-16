@@ -7,14 +7,14 @@
 
 import Foundation
 
-#if os(iOS)
+#if os(iOS) || os(padOS)
 import UIKit
 #elseif os(watchOS)
 import WatchKit
 #endif
 
 public func currentDeviceName() -> String {
-    #if os(iOS)
+    #if os(iOS || os(padOS))
     return UIDevice.current.name
     #elseif os(macOS)
     return Host.current().localizedName ?? "Unknown Mac"
