@@ -10,7 +10,7 @@ import Foundation
 import WatchKit
 #endif
 
-func currentDeviceName() -> String {
+public func currentDeviceName() -> String {
     #if os(iOS)
     import UIKit
     return UIDevice.current.name
