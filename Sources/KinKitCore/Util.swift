@@ -6,9 +6,6 @@
 //
 
 import Foundation
-#if os(watchOS)
-import WatchKit
-#endif
 
 public func currentDeviceName() -> String {
     #if os(iOS)
@@ -19,6 +16,7 @@ public func currentDeviceName() -> String {
     #elseif os(tvOS)
     return UIDevice.current.name
     #elseif os(watchOS)
+    import WatchKit
     return WKInterfaceDevice.current().name
     #else
     return "Unknown Device"
