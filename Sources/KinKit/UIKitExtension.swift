@@ -4,7 +4,7 @@
 //
 //  Created by kin on 4/30/25.
 //
-#if canImport(UIKit)
+#if canImport(UIKit) && !os(watchOS)
 import UIKit
 public extension UIView {
     static func fileName() -> String {
