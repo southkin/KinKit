@@ -13,6 +13,7 @@ import UIKit
 import WatchKit
 #endif
 
+@MainActor
 public func currentDeviceName() -> String {
     #if os(iOS) || os(padOS)
     return UIDevice.current.name
