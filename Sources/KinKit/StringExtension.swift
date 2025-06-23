@@ -12,4 +12,7 @@ public extension String {
         guard let data = self.data(using: .utf8) else { return self }
         return SHA256.hash(data: data).compactMap { String(format: "%02x", $0) }.joined()
     }
+    var decimalValue: Decimal? {
+        .init(string: self)
+    }
 }
