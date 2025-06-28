@@ -8,7 +8,7 @@
 import Foundation
 
 /// 더하고 싶은 날짜 단위 + 값
-enum DateComponentOffset {
+public enum DateComponentOffset {
     case year(_ value: Int)
     case month(_ value: Int)
     case day(_ value: Int)
@@ -17,7 +17,7 @@ enum DateComponentOffset {
     case second(_ value: Int)
 }
 
-extension Date {
+public extension Date {
     /// 하나의 컴포넌트 오프셋을 더한 새 Date를 반환
     func add(_ offset: DateComponentOffset, calendar: Calendar = .current) -> Date {
         switch offset {
