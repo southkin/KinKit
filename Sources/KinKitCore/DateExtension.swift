@@ -42,4 +42,16 @@ public extension Date {
             date.add(offset, calendar: calendar)
         }
     }
+    
+    func toString(format:String = "yyyy-MM-dd HH:mm:ss") -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = format
+        return formatter.string(from: self)
+    }
+    static func date(fromString string: String?, format: String = "yyyy-MM-dd HH:mm:ss") -> Date? {
+        guard let string = string else { return nil }
+        let formatter = DateFormatter()
+        formatter.dateFormat = format
+        return formatter.date(from: string)
+    }
 }
