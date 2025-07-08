@@ -27,3 +27,19 @@ public func currentDeviceName() -> String {
     return "Unknown Device"
     #endif
 }
+
+public func debugPrint(
+    _ items: Any...,
+    separator: String = " ",
+    terminator: String = "\n",
+    file: String = #file,
+    function: String = #function,
+    line: Int = #line
+) {
+    // 파일명만 떼기
+    let filename = (file as NSString).lastPathComponent
+    // items 합치기
+    let message = items.map { "\($0)" }.joined(separator: separator)
+    // 최종 포맷
+    Swift.print("[\(filename):\(line) \(function)] \(message)", terminator: terminator)
+}
