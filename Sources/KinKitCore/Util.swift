@@ -28,7 +28,7 @@ public func currentDeviceName() -> String {
     #endif
 }
 
-public func debugPrint(
+public func debugLog(
     _ items: Any...,
     separator: String = " ",
     terminator: String = "\n",
