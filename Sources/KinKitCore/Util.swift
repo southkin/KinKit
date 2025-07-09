@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftData
 
 #if os(iOS) || os(padOS)
 import UIKit
@@ -42,4 +43,21 @@ public func debugLog(
     let message = items.map { "\($0)" }.joined(separator: separator)
     // 최종 포맷
     Swift.print("[\(filename):\(line) \(function)] \(message)", terminator: terminator)
+}
+
+@available(iOS 17.0, macOS 14.0, *)
+@ModelActor
+public actor GenericModelActor: ModelActor {
+    public func execute<T>(
+        _ work: @Sendable (ModelContext) -> T
+    ) async -> T {
+        return work(self.modelContext)
+    }
+
+    /// throws 버전
+    public func executeThrowing<T>(
+        _ work: @Sendable (ModelContext) throws -> T
+    ) async rethrows -> T {
+        return try work(self.modelContext)
+    }
 }
