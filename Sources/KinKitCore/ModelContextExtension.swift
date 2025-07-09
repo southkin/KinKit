@@ -5,6 +5,8 @@
 //  Created by kin on 7/9/25.
 //
 
+import SwiftData
+
 @available(iOS 17.0, macOS 14.0, *)
 actor ModelActorManager {
     static let shared = ModelActorManager()
